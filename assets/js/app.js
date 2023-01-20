@@ -1,16 +1,16 @@
 const baseEndpoint = 'https://api.github.com';
 const usersEndpoint = `${baseEndpoint}/users`;
-const $n = document.querySelector('name');
-const $b = document.querySelector('#blog');
-const $l = document.querySelector('.location');
+const nombre = document.querySelector('.name');
+const blog = document.querySelector('.blog');
+//const location = document.querySelector('.location'); no exixte esa etiqueta/clase/id en el html
 
 function displayUser(username) {
-  $n.textContent = 'cargando...';
+  nombre.textContent = 'cargando...';
   const response = await fetch(`${usersEndpoint}/${username}`);
   console.log(data);
-  $n.textContent = '${data.name}';
-  $b.textContent = '${data.blog}';
-  $l.textContent = '${data.location}';
+  nombre.textContent = '${data.name}';
+  blog.textContent = '${data.blog}';
+  //location.textContent = '${data.location}';
 }
 
 function handleError(err) {
